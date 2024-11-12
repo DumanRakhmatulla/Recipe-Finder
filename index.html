@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Recipe Finder</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/png+xml" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="title">Recipe Finder</h1>
+    <div id="search-form">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="query" placeholder="Search any recipes" />
+      <button id="search-button" onclick="searchRecipes()">Search</button>
+    </div>
+
+    <div id="results"></div>
+    <div id="recipe-details">
+      <div id="statusBar">
+        <span>
+          <i
+            id="close-button"
+            onclick="closeRecipeDetails()"
+            class="fas fa-window-close"
+          ></i>
+        </span>
+      </div>
+      <div id="recipe-content"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
