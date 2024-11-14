@@ -40,11 +40,15 @@ async function searchRecipes() {
 async function showRecipeDetails(recipeId) {
   const recipeDetailsDiv = document.getElementById("recipe-details");
   const recipeContentDiv = document.getElementById("recipe-content");
+  recipeDetailsDiv.style.display = "flex";
   try {
     const response = await fetch(
       `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`
     );
     const recipeData = await response.json();
+
+    recipeContentDiv.style.background = `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.7)), url(${recipeData.image})`;
+
     recipeContentDiv.innerHTML = `
         <h2>${recipeData.title}</h2>
         <img src="${recipeData.image}" alt="${recipeData.title}">
